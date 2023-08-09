@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Text editor',
+        title: 'ScriptWave',
       }),
 
       //Injects our custom service worker
@@ -33,8 +33,8 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Text editor',
-        short_name: 'Editor',
+        name: 'ScriptWave',
+        short_name: 'ScriptWave',
         description: 'Code easily and in style!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
