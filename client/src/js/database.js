@@ -15,40 +15,40 @@ const initdb = async () =>
 export const putDb = async (content) => {
   console.error('putDb implemented');
 
-  //Create connection to the db and the version
+  //Create a new connection to the db and the version we ant to use
   const jateDb = await openDB('jate', 1);
 
-  //Create transaction and specify db and data privileges
+  //Create a new transaction and also specify db and data privileges
   const tx = jateDb.transaction('jate', 'readwrite');
 
-  //Open desire object store
+  //Open up the desire object store
   const store = tx.objectStore('jate');
 
-  //Put method to pass the content
+  //Put method
   const request = store.put({ id: 1, data: content });
 
-  //Get confirmation of request
+  //Get confirmation of the request
   const result = await request;
-  console.log('Data saved to the database', result);
+  console.log('Saved to DB', result);
 };
 
 export const getDb = async () => {
   console.error('getDb implemented');
-  //Create connection to the db and the version
+  //Create a new connection to the db and the version we want to use
   const jateDb = await openDB('jate', 1);
 
-  //Create transaction and specify db and data privileges
+  //Create a new transaction and also specify db and data privileges
   const tx = jateDb.transaction('jate', 'readonly');
 
-  //Open desire object store
+  //Open up the desire object store
   const store = tx.objectStore('jate');
 
-  //getAll method to get data
+  //getAll method to get data all data
   const request = store.getAll();
 
-  //Get confirmation of request
+  //Get confirmation of the request
   const result = await request;
-  console.log('Data from database', result);
+  console.log('Data fromDB', result);
 };
 
 initdb();
