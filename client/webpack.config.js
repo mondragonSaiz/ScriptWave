@@ -3,9 +3,6 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
-
 module.exports = () => {
   return {
     mode: 'development',
@@ -18,32 +15,32 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      // Webpack Plugin
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'ScriptWave',
+        title: 'Text Editor',
       }),
 
-      //Injects our custom service worker
+      //Service worker Plugin
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
 
-      //Creates a manifest.json file.
+      //Mainfest file Plugin
       new WebpackPwaManifest({
+        name: 'Text Editor',
         fingerprints: false,
-        inject: true,
-        name: 'ScriptWave',
-        short_name: 'ScriptWave',
-        description: 'Code easily and in style!',
-        background_color: '#225ca3',
-        theme_color: '#225ca3',
-        static_url: './',
+        short_name: 'T.E',
+        description: 'Text editor to store important data or code snippets',
+        background_color: '#7eb4e2',
+        theme_color: '#7eb4e2',
+        start_url: './',
         publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 285, 512],
+            sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
         ],
