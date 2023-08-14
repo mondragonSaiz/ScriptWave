@@ -1,7 +1,9 @@
 # ScriptWave
 ScriptWave is a browser-based text editor designed to provide a seamless and feature-rich writing experience. This single-page application (SPA) harnesses the power of Progressive Web App (PWA) technology, allowing users to enjoy the benefits of a fully functional text editor within their web browser.
 
-
+## Link to deployed app
+- https://still-journey-05784-61f132062d8c.herokuapp.com/
+  
 ## User Story
 AS A developer
 I WANT to create notes or code snippets with or without an internet connection
@@ -34,8 +36,7 @@ THEN I should have my static assets pre cached upon loading along with subsequen
 - WHEN I deploy to Heroku
 THEN I should have proper build scripts for a webpack application
 
-## Link to deployed app
-- https://still-journey-05784-61f132062d8c.herokuapp.com/
+
 
 ![Screen Shot 2023-08-09 at 14 27 53](https://github.com/mondragonSaiz/ScriptWave/assets/71055501/3bd2c5ec-c28f-4165-be14-439a66a5f86b)
 
